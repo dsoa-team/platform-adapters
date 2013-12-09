@@ -1,0 +1,2 @@
+Private-Package: br.ufpe.cin.dsoa.adapter
+Import-Package: br.ufpe.cin.dsoa.api.event

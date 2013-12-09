@@ -1,0 +1,7 @@
+<ipojo>
+	<component classname="br.ufpe.cin.dsoa.adapter.AMPQAdapter">
+		<requires field="eventTypeCatalog" />
+		<provides/>
+	</component>
+	<instance component="br.ufpe.cin.dsoa.adapter.AMPQAdapter" name="AMPQAdapter" />
+</ipojo>
