@@ -67,8 +67,7 @@ public class AMPQAdapter implements EventAdapter {
 			channel.queueDeclare(queueName, false, false, false, null);
 
 			final QueueingConsumer queueConsumer = new QueueingConsumer(channel);
-			String consumerTag = queueConsumer.getConsumerTag();
-			channel.basicConsume(queueName, false, consumerTag, true, false, null, queueConsumer);
+			channel.basicConsume(queueName, true, "", true, false, null, queueConsumer);
 			executorService.execute(new Worker(queueConsumer, consumer));
 		} catch (IOException e) {
 			e.printStackTrace();
