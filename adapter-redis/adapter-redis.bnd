@@ -1,0 +1,2 @@
+Private-Package: br.ufpe.cin.dsoa.adapter, br.ufpe.cin.dsoa.adapter.serializer, br.ufpe.cin.dsoa.adapter.redis 
+Import-Package: br.ufpe.cin.dsoa.api.event, com.google.gson, redis.clients.jedis

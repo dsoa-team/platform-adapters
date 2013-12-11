@@ -1,0 +1,6 @@
+<ipojo>
+	<component classname="br.ufpe.cin.dsoa.adapter.RedisAdapter">
+		<provides/>
+	</component>
+	<instance component="br.ufpe.cin.dsoa.adapter.RedisAdapter" name="RedisAdapter" />
+</ipojo>
