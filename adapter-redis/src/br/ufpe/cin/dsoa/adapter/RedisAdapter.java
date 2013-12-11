@@ -27,7 +27,7 @@ public class RedisAdapter implements EventAdapter {
 		String jsonEvent = JsonSerializer.getInstance().getJson(event);
 
 		String name = event.getEventType().getName();
-		String source = (String) event.getMetadataProperty("soruce").getValue();
+		String source = (String) event.getMetadataProperty("source").getValue();
 		String key = String.format("%s.%s", name, source);
 		
 		RedisClient.getInstance().add(key, jsonEvent);
