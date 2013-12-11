@@ -43,7 +43,7 @@ public class AMPQAdapter implements EventAdapter {
 		try {
 			Connection connection = createConnection();
 			Channel channel = connection.createChannel();
-			channel.queueDeclare(queueName, true, false, false, null);
+			channel.queueDeclare(queueName, false, false, false, null);
 
 			String jsonEvent = JsonSerializer.getInstance().getJson(event);
 			byte[] msg = jsonEvent.getBytes();
@@ -67,7 +67,8 @@ public class AMPQAdapter implements EventAdapter {
 			channel.queueDeclare(queueName, false, false, false, null);
 
 			final QueueingConsumer queueConsumer = new QueueingConsumer(channel);
-			channel.basicConsume(queueName, true, queueConsumer);
+			String consumerTag = queueConsumer.getConsumerTag();
+			channel.basicConsume(queueName, false, consumerTag, true, false, null, queueConsumer);
 			executorService.execute(new Worker(queueConsumer, consumer));
 		} catch (IOException e) {
 			e.printStackTrace();
