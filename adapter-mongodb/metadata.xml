@@ -1,0 +1,6 @@
+<ipojo>
+	<component classname="br.ufpe.cin.dsoa.adapter.mongodb.MongodbAdapter">
+		<provides/>
+	</component>
+	<instance component="br.ufpe.cin.dsoa.adapter.mongodb.MongodbAdapter" name="Mongodapter" />
+</ipojo>
